@@ -1,0 +1,217 @@
+/* Develop a menu-driven program to implement arithmetic operations such as +, -, *, /, and %
+using UDF, switch case, and looping. Make sure that the program is endless until a certain letter
+is pressed. */
+
+#include <iostream>
+using namespace std;
+
+int add(int a, int b)
+{
+    return a + b;
+}
+
+int sub(int a, int b)
+{
+    return a - b;
+}
+
+int mul(int a, int b)
+{
+    return a * b;
+}
+
+int division(int a, int b)
+{
+    if (b != 0)
+    {
+        return a / b;
+    }
+    else
+    {
+        cout << "Error : Division by zero is not allowed ." << endl;
+        return -1;
+    }
+}
+int mod(int a, int b)
+{
+    if (b != 0)
+    {
+        return a % b;
+    }
+    else
+    {
+        cout << "Error : Modulus by zero is not allowed." << endl;
+        return -1;
+    }
+}
+int main()
+{
+
+    int num1, num2, choice;
+
+    while (1)
+    {
+
+        cout << "Press 1 for + " << endl;
+        cout << "Press 2 for - " << endl;
+        cout << "Press 3 for * " << endl;
+        cout << "Press 4 for / " << endl;
+        cout << "Press 5 for %% " << endl;
+        cout << "Press 0 to exit " << endl;
+
+        cout << "Enter your choice : ";
+        cin >> choice;
+
+        if (choice == 0)
+        {
+            cout << "Exiting the program.";
+            break;
+        }
+
+        if (choice == 5)
+        {
+            cout << "Enter the first integer for modulus: ";
+            cin >> num1;
+            cout << "Enter the second integer for modulus: ";
+            cin >> num2;
+        }
+        else
+        {
+            cout << "Enter the first Number: ";
+            cin >> num1;
+            cout << "Enter the second Number: ";
+            cin >> num2;
+        }
+
+        // Switch-case
+
+        switch (choice)
+        {
+        case 1:
+            cout << "Result: " << add(num1, num2) << endl;
+            break;
+        case 2:
+            cout << "Result: " << sub(num1, num2) << endl;
+            break;
+        case 3:
+            cout << "Result: " << mul(num1, num2) << endl;
+            break;
+        case 4:
+            if (division(num1, num2) != -1)
+                cout << "Result: " << division(num1, num2) << endl;
+            break;
+        case 5:
+            if (mod(num1, num2) != -1)
+                cout << "Result: " << mod(num1, num2) << endl;
+            break;
+        default:
+            cout << "Invalid choice! Please select a valid operation.";
+        }
+    }
+    return 0;
+
+    /* OUTPUT :-
+
+        Press 1 for +
+        Press 2 for -
+        Press 3 for *
+        Press 4 for /
+        Press 5 for %%
+        Press 0 to exit
+
+        Enter your choice : 1
+
+        Enter the first Number: 20
+        Enter the second Number: 6
+        Result: 26
+
+        Press 1 for +
+        Press 2 for -
+        Press 3 for *
+        Press 4 for /
+        Press 5 for %%
+        Press 0 to exit
+
+        Enter your choice : 2
+
+        Enter the first Number: 20
+        Enter the second Number: 5
+        Result: 15
+
+        Press 1 for +
+        Press 2 for -
+        Press 3 for *
+        Press 4 for /
+        Press 5 for %%
+        Press 0 to exit
+
+        Enter your choice : 3
+
+        Enter the first Number: 40
+        Enter the second Number: 5
+        Result: 200
+
+        Press 1 for +
+        Press 2 for -
+        Press 3 for *
+        Press 4 for /
+        Press 5 for %%
+        Press 0 to exit
+
+        Enter your choice : 4
+
+        Enter the first Number: 60
+        Enter the second Number: 10
+        Result: 6
+
+        Press 1 for +
+        Press 2 for -
+        Press 3 for *
+        Press 4 for /
+        Press 5 for %%
+        Press 0 to exit
+
+        Enter your choice : 5
+
+        Enter the first integer for modulus: 50
+        Enter the second integer for modulus: 5
+        Result: 0
+
+       Press 1 for +
+       Press 2 for -
+       Press 3 for *
+       Press 4 for /
+       Press 5 for %%
+       Press 0 to exit
+
+       Enter your choice : 4
+
+       Enter the first Number: 30
+       Enter the second Number: 0
+       Error : Division by zero is not allowed .
+
+       Press 1 for +
+       Press 2 for -
+       Press 3 for *
+       Press 4 for /
+       Press 5 for %%
+       Press 0 to exit
+
+       Enter your choice : 5
+
+       Enter the first integer for modulus: 78
+       Enter the second integer for modulus: 0
+       Error : Modulus by zero is not allowed.
+
+        Press 1 for +
+        Press 2 for -
+        Press 3 for *
+        Press 4 for /
+        Press 5 for %%
+        Press 0 to exit
+
+        Enter your choice : 0
+        Exiting the program.
+        
+    */
+}
